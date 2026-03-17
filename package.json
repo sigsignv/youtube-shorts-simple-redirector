@@ -1,8 +1,10 @@
 {
-  "name": "youtube-shorts-redirector",
-  "description": "Automatically redirects YouTube Shorts to the standard watch page.",
   "private": true,
+  "name": "youtube-shorts-simple-redirector",
+  "description": "Automatically redirects YouTube Shorts to the standard watch page.",
   "version": "0.1.4",
+  "author": "Sigsign <sig@signote.cc>",
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
