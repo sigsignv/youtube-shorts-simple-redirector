@@ -1,7 +1,7 @@
 import { defineContentScript } from "#imports";
 
-type RedirectOptions = {
-  phase: string;
+type RedirectContext = {
+  trigger: string;
 };
 
 export default defineContentScript({
@@ -10,7 +10,7 @@ export default defineContentScript({
   allFrames: false,
 
   main(ctx) {
-    redirectIfOnShorts({ phase: "document_start" });
+    redirectIfOnShorts({ trigger: "document_start" });
 
     const events = [
       /**
@@ -25,7 +25,7 @@ export default defineContentScript({
     for (const event of events) {
       ctx.addEventListener(document, event, () => {
         if (ctx.isValid) {
-          redirectIfOnShorts({ phase: event });
+          redirectIfOnShorts({ trigger: event });
         }
       });
     }
@@ -40,10 +40,12 @@ function extractShortsId() {
   return segments[2];
 }
 
-function redirectIfOnShorts({ phase }: RedirectOptions) {
+function redirectIfOnShorts({ trigger }: RedirectContext) {
   const shortsId = extractShortsId();
   if (shortsId !== "") {
-    console.debug(`Redirect triggered at ${phase}`);
+    console.debug(
+      `Redirect triggered at ${trigger}, redirecting to /watch?v=${shortsId}`,
+    );
     location.replace(`/watch?v=${shortsId}`);
   }
 }
