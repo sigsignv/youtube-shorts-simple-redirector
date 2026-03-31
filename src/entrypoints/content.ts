@@ -32,17 +32,17 @@ export default defineContentScript({
   },
 });
 
-function extractShortsId() {
-  const segments = location.pathname.split("/");
+function getShortsId(pathname: string): string | null {
+  const segments = pathname.split("/");
   if (segments.length !== 3 || segments[1] !== "shorts") {
-    return "";
+    return null;
   }
   return segments[2];
 }
 
 function redirectIfOnShorts({ trigger }: RedirectContext) {
-  const shortsId = extractShortsId();
-  if (shortsId !== "") {
+  const shortsId = getShortsId(location.pathname);
+  if (shortsId) {
     console.debug(
       `Redirect triggered at ${trigger}, redirecting to /watch?v=${shortsId}`,
     );
