@@ -24,7 +24,9 @@ export default defineContentScript({
     ];
     for (const event of events) {
       ctx.addEventListener(document, event, () => {
-        redirectIfOnShorts({ phase: event });
+        if (ctx.isValid) {
+          redirectIfOnShorts({ phase: event });
+        }
       });
     }
   },
