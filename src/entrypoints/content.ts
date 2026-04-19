@@ -1,7 +1,7 @@
 import { defineContentScript } from "#imports";
 
-type RedirectOptions = {
-  phase: string;
+type RedirectContext = {
+  trigger: string;
 };
 
 export default defineContentScript({
@@ -10,38 +10,31 @@ export default defineContentScript({
   allFrames: false,
 
   main(ctx) {
-    redirectIfOnShorts({ phase: "document_start" });
+    redirectIfShorts({ trigger: "document_start" });
 
-    const events = [
-      /**
-       * YouTube SPA navigation start event. Fires on internal navigations.
-       */
-      "yt-navigate-start",
-      /**
-       * Handle direct visits to the /shorts page.
-       */
-      "yt-page-data-updated",
-    ];
+    const events = ["yt-navigate-start", "yt-navigate-finish"];
     for (const event of events) {
       ctx.addEventListener(document, event, () => {
-        redirectIfOnShorts({ phase: event });
+        if (ctx.isValid) {
+          redirectIfShorts({ trigger: event });
+        }
       });
     }
   },
 });
 
-function extractShortsId() {
-  const segments = location.pathname.split("/");
+function getShortsId(pathname: string): string | null {
+  const segments = pathname.split("/");
   if (segments.length !== 3 || segments[1] !== "shorts") {
-    return "";
+    return null;
   }
   return segments[2];
 }
 
-function redirectIfOnShorts({ phase }: RedirectOptions) {
-  const shortsId = extractShortsId();
-  if (shortsId !== "") {
-    console.debug(`Redirect triggered at ${phase}`);
+function redirectIfShorts({ trigger }: RedirectContext) {
+  const shortsId = getShortsId(location.pathname);
+  if (shortsId) {
+    console.debug(`Redirect triggered at ${trigger}`);
     location.replace(`/watch?v=${shortsId}`);
   }
 }
