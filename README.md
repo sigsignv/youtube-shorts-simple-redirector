@@ -43,10 +43,6 @@ For Firefox:
 $ npm run zip:firefox
 ```
 
-### Dev Containers
-
-If you use Dev Containers, create `devcontainer.env` before starting it.
-
 ## Author
 
 - Sigsign <<sig@signote.cc>>
