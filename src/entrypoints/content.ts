@@ -10,7 +10,7 @@ export default defineContentScript({
   allFrames: false,
 
   main(ctx) {
-    redirectIfOnShorts({ trigger: "document_start" });
+    redirectIfShorts({ trigger: "document_start" });
 
     const events = [
       /**
@@ -25,7 +25,7 @@ export default defineContentScript({
     for (const event of events) {
       ctx.addEventListener(document, event, () => {
         if (ctx.isValid) {
-          redirectIfOnShorts({ trigger: event });
+          redirectIfShorts({ trigger: event });
         }
       });
     }
@@ -40,12 +40,10 @@ function getShortsId(pathname: string): string | null {
   return segments[2];
 }
 
-function redirectIfOnShorts({ trigger }: RedirectContext) {
+function redirectIfShorts({ trigger }: RedirectContext) {
   const shortsId = getShortsId(location.pathname);
   if (shortsId) {
-    console.debug(
-      `Redirect triggered at ${trigger}, redirecting to /watch?v=${shortsId}`,
-    );
+    console.debug(`Redirect triggered at ${trigger}`);
     location.replace(`/watch?v=${shortsId}`);
   }
 }
