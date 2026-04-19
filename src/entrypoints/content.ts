@@ -12,16 +12,7 @@ export default defineContentScript({
   main(ctx) {
     redirectIfShorts({ trigger: "document_start" });
 
-    const events = [
-      /**
-       * YouTube SPA navigation start event. Fires on internal navigations.
-       */
-      "yt-navigate-start",
-      /**
-       * Handle direct visits to the /shorts page.
-       */
-      "yt-page-data-updated",
-    ];
+    const events = ["yt-navigate-start", "yt-navigate-finish"];
     for (const event of events) {
       ctx.addEventListener(document, event, () => {
         if (ctx.isValid) {
