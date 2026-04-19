@@ -2,7 +2,7 @@
   "private": true,
   "name": "youtube-shorts-simple-redirector",
   "description": "Automatically redirects YouTube Shorts to the regular watch page.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Sigsign <sig@signote.cc>",
   "license": "Apache-2.0",
   "type": "module",
