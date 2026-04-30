@@ -18,11 +18,6 @@ To turn it off, disable or remove the extension.
 
 ## Development
 
-### Requirements
-
-- Node.js
-- npm
-
 ### Setup
 
 ```sh
