@@ -26,7 +26,7 @@ To turn it off, disable or remove the extension.
 ### Setup
 
 ```sh
-$ npm install
+$ pnpm install
 ```
 
 ### Build
@@ -34,13 +34,13 @@ $ npm install
 For Chrome / Chromium:
 
 ```sh
-$ npm run zip
+$ pnpm run zip
 ```
 
 For Firefox:
 
 ```sh
-$ npm run zip:firefox
+$ pnpm run zip:firefox
 ```
 
 ## Author
