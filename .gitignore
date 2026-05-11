@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-.pnpm-store/
+.pnpm-store
 .output
 stats.html
 stats-*.json
@@ -16,7 +16,6 @@ stats-*.json
 web-ext.config.ts
 
 # Editor directories and files
-.devcontainer/devcontainer.env
 .vscode/*
 !.vscode/extensions.json
 .idea
