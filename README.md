@@ -1,20 +1,14 @@
 # YouTube Shorts Simple Redirector
 
-A browser extension that automatically redirects YouTube Shorts to the regular watch page.
+A browser extension that automatically redirects YouTube Shorts to standard YouTube video pages.
 
-## Features
+## Overview
 
-- Zero configuration
-- No background script
-- No options page
+No setup or configuration is required.
 
-## Usage
+The extension has only one feature. It redirects YouTube Shorts.
 
-No setup is needed.
-
-Open a YouTube Shorts page, and it will automatically redirect to the regular watch page.
-
-To turn it off, disable or remove the extension.
+To stop redirects, disable or remove the extension.
 
 ## Development
 
@@ -26,7 +20,7 @@ $ pnpm install
 
 ### Build
 
-For Chrome / Chromium:
+For Chrome:
 
 ```sh
 $ pnpm run zip
