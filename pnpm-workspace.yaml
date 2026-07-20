@@ -3,3 +3,5 @@ allowBuilds:
   sharp: false
   spawn-sync: true
 minimumReleaseAge: 1440
+overrides:
+  esbuild@>=0.27.3 <0.28.1: 0.27.2
