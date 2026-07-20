@@ -1,30 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
+<?xml version="1.0" encoding="UTF-8"?>
 <svg
-   width="512"
-   height="512"
-   viewBox="0 0 512 512"
-   version="1.1"
-   id="svg1"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <g
-     id="layer1"
-     style="display:inline">
-    <path
-       style="fill:#ff0033"
-       id="rect3"
-       width="248.18401"
-       height="125.33301"
-       x="47.775455"
-       y="188.61998"
-       d="m 77.792816,188.61998 218.166644,0 V 313.95299 H 76.961251 a 29.185796,29.185796 45 0 1 -29.185796,-29.1858 v -66.12985 a 30.017361,30.017361 135 0 1 30.017361,-30.01736 z"
-       transform="translate(0.24199659,4.7135162)" />
-    <path
-       style="fill:#ff0033;fill-opacity:1;stroke:#ff0033;stroke-width:41.2037;stroke-linejoin:round;stroke-dasharray:none"
-       id="path6"
-       d="M 110.56041,318.6665 111.07586,-45.195447 425.93183,137.18192 Z"
-       transform="matrix(0.6040891,0,0,0.82368909,188.91769,143.37244)" />
-  </g>
+  xmlns="http://www.w3.org/2000/svg"
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+  role="img"
+  aria-label="Shorts Simple Redirector icon">
+  <path
+    d="M128 96H384C446 96 480 130 480 192V320C480 382 446 416 384 416H128C66 416 32 382 32 320V192C32 130 66 96 128 96Z"
+    fill="#FF0033" />
+  <path
+    d="M144 220H264V180Q264 166 275 175L366 247Q377 256 366 265L275 337Q264 346 264 332V292H144C138 292 136 288 136 282V230C136 224 138 220 144 220Z"
+    fill="#FFFFFF"
+    transform="translate(262 256) scale(1.2) translate(-256 -256)" />
 </svg>
