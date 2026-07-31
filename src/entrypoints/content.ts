@@ -28,7 +28,7 @@ function getShortsId(pathname: string): string | null {
   if (segments.length !== 3 || segments[1] !== "shorts") {
     return null;
   }
-  return segments[2];
+  return segments[2] ?? null;
 }
 
 function redirectIfShorts({ trigger }: RedirectContext) {
