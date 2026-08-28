@@ -6,6 +6,18 @@
   "author": "Sigsign <sig@signote.cc>",
   "license": "Apache-2.0",
   "type": "module",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.20.0",
+      "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": ">=24.0.0",
+      "onFail": "error"
+    }
+  },
   "scripts": {
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
