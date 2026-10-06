@@ -9,7 +9,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.20.0",
+      "version": "12.8.2",
       "onFail": "download"
     },
     "runtime": {

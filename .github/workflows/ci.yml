@@ -9,9 +9,6 @@ on:
 permissions:
   contents: read
 
-env:
-  pnpm_config_pm_on_fail: ignore
-
 jobs:
   quality:
     runs-on: ubuntu-latest
