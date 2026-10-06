@@ -9,7 +9,7 @@
 	"features": {
 		"ghcr.io/devcontainers/features/node:2.1.0": {
 			"version": "26",
-			"pnpmVersion": "11"
+			"pnpmVersion": "12"
 		}
 	},
 
