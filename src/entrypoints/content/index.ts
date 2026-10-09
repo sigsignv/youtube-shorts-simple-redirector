@@ -1,4 +1,5 @@
 import { defineContentScript } from "#imports";
+import { extractShortsId } from "./utils";
 
 type RedirectContext = {
   trigger: string;
@@ -23,16 +24,8 @@ export default defineContentScript({
   },
 });
 
-function getShortsId(pathname: string): string | null {
-  const segments = pathname.split("/");
-  if (segments.length !== 3 || segments[1] !== "shorts") {
-    return null;
-  }
-  return segments[2] ?? null;
-}
-
 function redirectIfShorts({ trigger }: RedirectContext) {
-  const shortsId = getShortsId(location.pathname);
+  const shortsId = extractShortsId(location.href);
   if (shortsId) {
     console.debug(`Redirect triggered at ${trigger}`);
     location.replace(`/watch?v=${shortsId}`);
