@@ -19,6 +19,11 @@ export default defineConfig({
       ? { ...baseManifest, ...firefoxManifest }
       : { ...baseManifest };
   },
+  vite: () => ({
+    define: {
+      "import.meta.vitest": "undefined",
+    },
+  }),
   modules: ["@wxt-dev/auto-icons"],
   autoIcons: {
     baseIconPath: "assets/icon.svg",
